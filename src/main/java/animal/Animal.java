@@ -30,8 +30,8 @@ public abstract class Animal {
     }
 
 
-    public abstract boolean eat(FoodForPredators Food);
-    public abstract boolean eat(FoodForHerbivores Food);
+    public abstract boolean eat(Food food);
+   // public abstract boolean eat(FoodForHerbivores Food);
 
     //public abstract boolean eat(Ant ant);
 

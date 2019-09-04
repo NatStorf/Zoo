@@ -9,7 +9,8 @@ import food.*;
 public class Zoo {
 
 
-    public static void feedAnimal(Predator predator, Herbivore herbivore) {
+    public static void feedAnimal(Animal animal, Food food) {
+
 //        food.Banana[] bananas = new food.Banana[20];
 //        for (int i = 0; i < bananas.length; i++) {
 //            bananas[i] = new food.Banana(food.Banana.name, food.Banana.value);
@@ -21,24 +22,17 @@ public class Zoo {
 //        }
         //animal.eat(ant);
 
-        while (predator.hungry < 0) {
-            Banana banana = new Banana(Banana.name,Banana.value, Banana.count);
-
-            Rabbit rabbit = new Rabbit(Rabbit.name, Rabbit.value, Rabbit.count);
-
-            System.out.println(rabbit.count);
-            if (rabbit.count > 0) {
-                predator.eat(rabbit);
-                rabbit.count--;
-                predator.areYouHungry();
+        while (animal.hungry < 0) {
+            System.out.println(food.count);
+            if (food.count > 0) {
+                animal.eat(food);
+                food.count--;
+                animal.areYouHungry();
             } else {
                 System.out.println("Еда кончилась");
                 break;
             }
-        }
-        while (herbivore.hungry < 0) {
-            Banana banana = new Banana(Banana.name, Banana.value, Banana.count);
-            herbivore.eat(banana);
+
         }
         //herbivore.areYouHungry();
 //        for(food.Banana banana : bananas){
@@ -70,7 +64,12 @@ public class Zoo {
         Lynx pepe = new Lynx("Pepe", -20);
 
 
-        feedAnimal(rex, bob);
+        Banana banana = new Banana(Banana.name, Banana.value, Banana.count);
+        feedAnimal(rex,banana);
+        Rabbit rabbit = new Rabbit(Rabbit.name, Rabbit.value, Rabbit.count);
+        feedAnimal(rex,rabbit);
+        Chicken chicken = new Chicken(Chicken.name,Chicken.value, Chicken.count);
+        feedAnimal(rex,chicken);
 
         System.out.println();
         System.out.println();
