@@ -1,4 +1,4 @@
-public class Monkey extends Animal{
+public class Monkey extends Herbivore{
 
     int Otlichie;
 
@@ -7,13 +7,17 @@ public class Monkey extends Animal{
         Otlichie = notUsed;
     }
 
-    public void test(Ant ant, int count){
-        ant.value = ant.value * count;
-        count = 10;
-    }
+//    public void test(Ant ant, int count){
+//        ant.value = ant.value * count;
+//        count = 10;
+//    }
 
     @Override
     public void areYouHungry() {
-        super.areYouHungry();
-    }
-}
+        if (hungry >= 0) {
+            System.out.println("Обезьянка сытая! " + hungry);
+        } else {
+            System.out.println("Обезьянка хочет кушать! " + hungry);
+        }
+
+    }}
