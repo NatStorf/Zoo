@@ -66,6 +66,8 @@ public class Zoo {
         Zebra grey = new Zebra("Grey",-55);
         Lynx hana = new Lynx("Hana", -76);
         Wolf zed = new Wolf("Zed", -105);
+        Monkey rob = new Monkey("Rob",-100, 1);
+        Lynx pepe = new Lynx("Pepe", -20);
 
 
         feedAnimal(rex, bob);
@@ -73,23 +75,27 @@ public class Zoo {
         System.out.println();
         System.out.println();
 
-        CagesForHerbivores greenCage = new CagesForHerbivores("greenCage", CagesForHerbivores.animalCount, 4) ;
+        CagesForHerbivores greenCage = new CagesForHerbivores("greenCage", 4) ;
         System.out.println("Создана клетка " + greenCage.name +".\n"+ "Максимальное количество животных - "+ greenCage.maxAnimalCount);
         greenCage.addAnimal(bob);
         greenCage.addAnimal(pip);
         greenCage.addAnimal(monty);
         greenCage.addAnimal(hana);
+        greenCage.addAnimal(rob);
+
         System.out.println("Животных в клетке "+greenCage.animalCount);
 
         System.out.println();
         System.out.println();
 
-        CagesForPredators meatCage = new CagesForPredators("meatCage", CagesForPredators.animalCount, 3);
+        CagesForPredators meatCage = new CagesForPredators("meatCage", 3);
+
         System.out.println("Создана клетка " + meatCage.name +".\n"+ "Максимальное количество животных - "+ meatCage.maxAnimalCount);
         meatCage.addAnimal(rex);
         meatCage.addAnimal(zed);
         meatCage.addAnimal(hana);
         meatCage.addAnimal(grey);
+        meatCage.addAnimal(pepe);
         System.out.println("Животных в клетке "+ meatCage.animalCount);
     }
 

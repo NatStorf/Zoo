@@ -2,9 +2,14 @@ package animal;
 import cages.CagesForHerbivores;
 import cages.CagesForPredators;
 import food.*;
+
 public abstract class Animal {
+    public enum Type{
+        None,Herbivore,Predator
+    }
+    public Type animalType;
     public int hungry;
-    public static String name;
+    public  String name;
 
 
 //    public animal.Animal(String name) {
@@ -20,6 +25,8 @@ public abstract class Animal {
     public Animal( String name, int hungry) {
         this.hungry = hungry;
         this.name = name;
+        this.animalType = Type.None;
+
     }
 
 

@@ -4,6 +4,7 @@ import food.*;
 public abstract class  Predator extends Animal{
     public Predator(String name, int hungry) {
         super(name, hungry);
+        this.animalType= Type.Predator;
     }
 
     @Override

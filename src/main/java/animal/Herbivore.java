@@ -6,6 +6,7 @@ public abstract class Herbivore extends Animal{
 
    public Herbivore(String name, int hungry) {
        super(name, hungry);
+       this.animalType = Type.Herbivore;
    }
 
     @Override
