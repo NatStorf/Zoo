@@ -1,25 +1,18 @@
 package animal;
 
-public class Monkey extends Herbivore{
-
-    int Otlichie;
-
-    public Monkey(String name, int hungry, int notUsed) {
+public class Monkey extends Animal implements Herbivore {
+    public Monkey(String name, int hungry) {
         super(name, hungry);
-        Otlichie = notUsed;
+    }
+    public String getAnimalName() {
+        return animalName;
+    }
+    public int getHungry() {
+        return hungry;
+    }
+    public String getAnimalType() {
+        return type;
     }
 
-//    public void test(Ant ant, int count){
-//        ant.value = ant.value * count;
-//        count = 10;
-//    }
 
-    @Override
-    public void areYouHungry() {
-        if (hungry >= 0) {
-            System.out.println("Обезьянка сытая! " + hungry);
-        } else {
-            System.out.println("Обезьянка хочет кушать! " + hungry);
-        }
-
-    }}
+}

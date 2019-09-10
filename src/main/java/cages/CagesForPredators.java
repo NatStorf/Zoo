@@ -11,14 +11,14 @@ public  class CagesForPredators extends Cages {
 
 
     public void addAnimal(Animal animal) {
-        if(animal.animalType == Animal.Type.Predator) {
-            if (this.animalCount < this.maxAnimalCount) {
+        if(animal.getAnimalType().equals(Predator.type)) {
+            if (this.animalCount < maxAnimalCount) {
                 this.animalCount++;
-                System.out.println("Животное " + animal.name + " добавлено в клетку. Всего животных - " + this.animalCount);
+                System.out.println("Животное " + animal.animalName + " добавлено в клетку. Всего животных - " + this.animalCount);
             } else {
                 System.out.println("Некуда класть");
             }
-        }else if(animal.animalType == Animal.Type.Herbivore){
+        }else if(animal.getAnimalType().equals(Herbivore.type)){
             System.out.println("Травоядного животного нельзя класть в клетку с хищником!");
         }
     }

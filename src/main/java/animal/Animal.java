@@ -1,46 +1,61 @@
 package animal;
-import cages.CagesForHerbivores;
-import cages.CagesForPredators;
 import food.*;
 
 public abstract class Animal {
-    public enum Type{
-        None,Herbivore,Predator
-    }
-    public Type animalType;
     public int hungry;
-    public  String name;
+    public String animalName;
 
-
-//    public animal.Animal(String name) {
-//        this.name = name;
-//        hungry = -60;
-//    }
-//
-//    public animal.Animal(int hungry, String name) {
-//        this.hungry = hungry;
-//        this.name = name;
-//    }
-
-    public Animal( String name, int hungry) {
+    public Animal(String animalName, int hungry) {
         this.hungry = hungry;
-        this.name = name;
-        this.animalType = Type.None;
-
+        this.animalName = animalName;
     }
 
-
-    public abstract boolean eat(Food food);
-   // public abstract boolean eat(FoodForHerbivores Food);
-
-    //public abstract boolean eat(Ant ant);
+    public abstract String getAnimalType();
+    public abstract int getHungry();
 
     public void areYouHungry() {
         if (hungry >= 0) {
-            System.out.println("Животное сытое! " + hungry);
+            System.out.println(animalName + " сытый");
         } else {
-            System.out.println("ЖРАААААТЬ! " + hungry);
+            System.out.println(animalName + " хочет кушать " + hungry);
         }
-
     }
+
+
+
+    public void eat(Food food) throws EatException {
+        if(getAnimalType().equals(Predator.type)){
+            if (food.getFoodType().equals(FoodForPredators.type)) {
+                hungry += food.getValue();
+                System.out.println(animalName + " съел одного " + food.foodName);
+            } else{
+                throw new EatException();
+            }
+        }else {
+            if (food.getFoodType().equals(FoodForHerbivores.type)) {
+                hungry += food.getValue();
+                System.out.println(animalName + " съел одного " + food.foodName);
+            } else{
+                throw new EatException();
+            }
+        }
+    }
+//    public void eat(Food food) {
+//        if (getAnimalType().equals(Predator.type)) {
+//            if (food.getFoodType().equals(FoodForPredators.type)) {
+//                hungry += food.getValue();
+//                System.out.println(animalName + " съел одного " + food.foodName);
+//            } else if (food.getFoodType().equals(FoodForHerbivores.type)) {
+//                System.out.println(food.foodName + " мне не подходит");
+//            }
+//        }else {
+//            if (food.getFoodType().equals(FoodForHerbivores.type)) {
+//                hungry += food.getValue();
+//                System.out.println(animalName + " съел один " + food.foodName);
+//            } else if (food.getFoodType().equals(FoodForPredators.type)) {
+//                System.out.println(food.foodName + " мне не подходит");
+//            }
+//        }
+//
+//    }
 }

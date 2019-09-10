@@ -14,8 +14,8 @@ public abstract class Cages {
 
     public Cages(String name, int maxAnimalCount) {
       //  this.animalCount = animalCount;
-        this.maxAnimalCount = maxAnimalCount;
-        this.name = name;
+        Cages.maxAnimalCount = maxAnimalCount;
+        Cages.name = name;
     }
 
 

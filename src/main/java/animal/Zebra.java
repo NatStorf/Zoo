@@ -1,17 +1,18 @@
 package animal;
 
-public class Zebra extends Herbivore {
+public class Zebra extends Animal implements Herbivore {
     public Zebra(String name, int hungry) {
         super(name, hungry);
     }
-
-    @Override
-    public void areYouHungry() {
-        if (hungry >= 0) {
-            System.out.println("Зебра сытая!  " + hungry);
-        } else {
-            System.out.println("ЖРАААААТЬ! " + hungry);
-        }
-
+    public String getAnimalName() {
+        return animalName;
     }
+    public int getHungry() {
+        return hungry;
+    }
+    public String getAnimalType() {
+        return type;
+    }
+
+
 }

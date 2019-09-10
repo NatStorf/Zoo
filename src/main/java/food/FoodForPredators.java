@@ -1,8 +1,9 @@
 package food;
 
-public abstract class FoodForPredators extends Food {
-    public FoodForPredators(String name, int value, int count) {
-        super(name, value, count);
-        this.foodType = FoodType.Meat;
-    }
+public interface FoodForPredators {
+    public String getFoodName();
+    public int getCount();
+    public int getValue();
+    String type = "FoodForPredators";
+    String getFoodType();
 }
